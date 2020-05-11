@@ -41,7 +41,7 @@
                             <a class="nav-link" href="#portfolio">Portfolio</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#">Contacto</a>
+                            <a class="nav-link" href="#contacto">Contacto</a>
                         </li>
                     </ul>
                 </div>
@@ -65,8 +65,8 @@
             <h3 class="text-secondary">Datos personales</h3>
             <hr>
             <p><strong>Edad:</strong> 24 años</p>
-            <p><strong>Email:</strong> hernansanchez395@gmail.com</p>
-            <p><strong>Teléfono:</strong> +54 381 3331098</p>
+            <p><strong>Email:</strong> <a href="mailto:hernansanchez395@gmail.com" target="blank" class="text-dark">hernansanchez395@gmail.com</a></p>
+            <p><strong>Teléfono:</strong> <a href="tel:+543813331098" target="blank" class="text-dark">+54 381 3331098</a></p>
             <p><strong>Dirección:</strong> Lucas Córdoba 276, San Miguel de Tucumán, Tucumán.</p>
             <hr>
             <h3 class="text-secondary">Sobre mí:</h3>
@@ -272,9 +272,41 @@
                 </div>
             </div>
         </div>
+        <h2 class="display-4 text-center my-4" id="contacto">Contacto</h2>
+        <hr>
         <div>
-            
+            <form class="shadow bg-light rounded p-3 mt-2 mb-5">
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label>Nombre y apellido</label>
+                        <input type="text" placeholder="Escriba aquí su nombre y apellido" required
+                            class="form-control">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Teléfono</label>
+                        <input type="number" placeholder="**********" required class="form-control">
+                    </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                        <label for="exampleInputEmail1">Correo electrónico</label>
+                        <input type="email" placeholder="********@gmail.com" required class="form-control"
+                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                    </div>
+                    <div class="form-group col-md-6">
+                        <label>Empresa</label>
+                        <input type="text" placeholder="Escriba aquí el nombre de su empresa" required class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="exampleFormControlTextarea1">Mensaje</label>
+                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                </div>
+                <button class="btn btn-success enviar"><span>Enviar</span></button>
         </div>
+        </form>
+        </div>
+
     </section>
 
     <!--Modal de Cocu Panadería-->
@@ -340,7 +372,8 @@
                     </button>
                 </div>
                 <div class="modal-body p-0 m-0">
-                    <img src="img/Capturas/frantom-inicio.png" alt="Página de Inicio de Frantom Chocolates" class="w-100">
+                    <img src="img/Capturas/frantom-inicio.png" alt="Página de Inicio de Frantom Chocolates"
+                        class="w-100">
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
@@ -351,9 +384,10 @@
 
     <footer class="bg-navfoot text-light py-4">
         <div class="container text-center">
-            <i class="fab fa-linkedin fa-2x mr-2"></i>
-            <!--Agregar links-->
-            <i class="fab fa-github-square fa-2x"></i>
+            <a href="https://www.linkedin.com/in/hern%C3%A1n-s%C3%A1nchez-ortiz-46b6421a8/" target="blank"><i
+                    class="fab fa-linkedin fa-2x mr-2 text-light"></i></a>
+            <a href="https://github.com/hernansanchez95" target="blank"><i
+                    class="fab fa-github-square fa-2x text-light"></i></a>
             <p class="lead mt-2">Sánchez Ortiz Hernán</p>
             <p>&copy; Todos los derechos reservados.</p>
         </div>
