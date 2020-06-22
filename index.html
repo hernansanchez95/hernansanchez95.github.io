@@ -11,6 +11,12 @@
         integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
     <script src="https://kit.fontawesome.com/8582a43612.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/emailjs-com@2.3.2/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function () {
+            emailjs.init("user_b7c94443s6zb7iN339PXr");
+        })();
+    </script>
 </head>
 
 <body>
@@ -90,9 +96,8 @@
                         <div class="card-body">
                             <h5 class="card-title">Puesto de trabajo:</h5>
                             <p class="card-text">Mozo y bartender</p>
-                            <p><strong>Habilidades:</strong> <span
-                                    class="badge badge-danger">Atención al cliente</span> <span
-                                    class="badge badge-danger">Trabajo en caja</span>
+                            <p><strong>Habilidades:</strong> <span class="badge badge-danger">Atención al cliente</span>
+                                <span class="badge badge-danger">Trabajo en caja</span>
                             </p>
                         </div>
                     </div>
@@ -208,39 +213,43 @@
         <h2 class="display-4 text-center my-4" id="contacto">Contacto</h2>
         <hr>
         <div>
-            <form class="shadow bg-light rounded p-3 mt-2 mb-5">
+            <form class="shadow bg-light rounded p-3 mt-2 mb-5" onsubmit="validar(event)">
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label>Nombre y apellido</label>
-                        <input type="text" placeholder="Escriba aquí su nombre y apellido" required
-                            class="form-control">
+                        <input type="text" placeholder="Escriba aquí su nombre y apellido" id="nombre"
+                            class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
                     </div>
                     <div class="form-group col-md-6">
                         <label>Teléfono</label>
-                        <input type="number" placeholder="**********" required class="form-control">
+                        <input type="number" id="telefono" placeholder="**********"
+                            onblur="revisar(this); revisarNumeros(this)" class="form-control">
                     </div>
                 </div>
                 <div class="form-row">
                     <div class="form-group col-md-6">
                         <label for="exampleInputEmail1">Correo electrónico</label>
-                        <input type="email" placeholder="********@gmail.com" required class="form-control"
-                            id="exampleInputEmail1" aria-describedby="emailHelp">
+                        <input type="email" placeholder="********@gmail.com" id="mail" class="form-control"
+                            onblur="revisarMail(this)">
                     </div>
                     <div class="form-group col-md-6">
                         <label>Empresa</label>
-                        <input type="text" placeholder="Escriba aquí el nombre de su empresa" required
-                            class="form-control">
+                        <input type="text" placeholder="Escriba aquí el nombre de su empresa" id="empresa"
+                            class="form-control" onblur="revisar(this)" onkeyup="revisar(this)">
                     </div>
                 </div>
                 <div class="form-group">
-                    <label for="exampleFormControlTextarea1">Mensaje</label>
-                    <textarea class="form-control" id="exampleFormControlTextarea1" rows="3" required></textarea>
+                    <label>Mensaje</label>
+                    <textarea class="form-control" id="mensaje" rows="3" required
+                        placeholder="Escriba aquí un mensaje de al menos 10 caracteres."
+                        onblur="revisar(this); revisarLongitud(this)"></textarea>
+                    <div class="invalid-feedback">Por favor ingrese una consulta válida con almenos 10 caracteres.
+                    </div>
                 </div>
-                <button class="btn btn-success enviar"><span>Enviar</span></button>
+                <button type="submit" class="btn btn-success enviar"><span>Enviar</span></button>
+            </form>
         </div>
-        </form>
-        </div>
-
+        <div class="alert alert-success mt-4 d-none" id="success" role="alert"></div>
     </section>
 
     <!--Modal de Cocu Panadería-->
@@ -336,6 +345,7 @@
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"
         integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6"
         crossorigin="anonymous"></script>
+    <script src="js/formulariocv.js"></script>
 </body>
 
 </html>
