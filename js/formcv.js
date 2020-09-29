@@ -9,10 +9,8 @@ function revisar(input) {
 }
 
 function revisarMail(input) {
-    // Variable que contendrá el formato a validar.
     let expresion = /\w+@\w+\.[a-z]/;
     if (input.value != "") {
-        //Aquí voy a validar el formato de ese mail emilse@gmail.com
         console.log(input.value);
         console.log(expresion.test(input.value));
         if (expresion.test(input.value)) {
@@ -50,15 +48,13 @@ function revisarLongitud(input) {
 
 function validar(event) {
     event.preventDefault();
-    console.log("Dentro de la función validar.");
-
     if (revisar(document.getElementById('nombre')) &&
         revisarMail(document.getElementById('mail')) &&
         revisarNumeros(document.getElementById('telefono')) &&
         revisarLongitud(document.getElementById('mensaje'))) {
         enviarMail();
     } else {
-        alert("Envío fallido.")
+        alert("Delivery failed.")
     }
 }
 
@@ -76,13 +72,13 @@ function enviarMail() {
     let template_id = "template_0X8TJd5M";
     emailjs.send(service_id, template_id, template_params).then(
         function (response) {
-            console.log("Todo está bien.", response);
+            console.log("Ok.", response);
             document.getElementById('success').className = "alert alert-success mt-4";
-            document.getElementById('success').innerText = "Consulta enviada correctamente."
+            document.getElementById('success').innerText = "Query sent successfully."
         }, function (error) {
-            console.log("Está todo mal.", response);
-            document.getElementById('success').className = "alert alert-danger mt-4";
-            document.getElementById('success').innerText = "Algo salió mal =C."    
+            console.log("Failed.", response);
+            document.getElementById('danger').className = "alert alert-danger mt-4";
+            document.getElementById('danger').innerText = "Something went wrong."    
         }
     )
 }
